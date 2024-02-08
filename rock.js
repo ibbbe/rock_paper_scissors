@@ -9,7 +9,7 @@ function playGame() {
     while (counter < 5) {
         counter++;
 
-        // function to randomly get number from 0 to 2, to use as a index from choiceArray
+        // function to randomly get number from 0 to 2, to use as index from choiceArray
         function getComputerChoice() {
             return Math.floor(Math.random() * 3);
         }
