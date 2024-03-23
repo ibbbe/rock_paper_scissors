@@ -11,7 +11,6 @@ let computerScore = 0;
 let playerScore = 0;
 
 function playGame(playerInput) {
-
     if (computerScore < 5 & playerScore < 5) {
 
         // function to randomly get number from 0 to 2, to use as index from choiceArray
@@ -20,11 +19,8 @@ function playGame(playerInput) {
         }
 
         const choiceArray = ["rock", "paper", "scissors"];
-
         let computerSelection = choiceArray[getComputerChoice()];
-
         let playerSelection = choiceArray[playerInput];
-
         let div = document.querySelector('div');
         let paragraphResult = document.createElement('p');
 
@@ -86,13 +82,15 @@ function playGame(playerInput) {
     else {
         const finalScoreDiv = document.querySelector('#finalResult');
         const finalScoreP = document.createElement('p');
+        finalScoreP.setAttribute("style", "color: red;");
 
         if (computerScore > playerScore) {
-            finalScoreP.textContent = `You loose! Computer wins ${computerScore} : ${playerScore}.`
+            finalScoreP.textContent = `You loose! Computer wins 
+            ${computerScore} : ${playerScore}`;
             finalScoreDiv.appendChild(finalScoreP);
         } else {
             (computerScore < playerScore)
-            finalScoreP.textContent = `You win! ${playerScore} : ${computerScore} `;
+            finalScoreP.textContent = `You win! ${playerScore} : ${computerScore}`;
             finalScoreDiv.appendChild(finalScoreP);
         }
     }
